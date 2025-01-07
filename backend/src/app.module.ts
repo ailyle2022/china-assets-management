@@ -6,9 +6,10 @@ import { CategoriesModule } from './categories/categories.module';
 import { LocationModule } from './location/location.module';
 import { VenderModule } from './vender/vender.module';
 import { CompanyModule } from './company/company.module';
+import { PurchaseOrderModule } from './purchase-order/purchase-order.module';
 
 @Module({
-  imports: [BlogPostsModule, CategoriesModule, LocationModule, VenderModule, CompanyModule],
+  imports: [BlogPostsModule, CategoriesModule, LocationModule, VenderModule, CompanyModule, PurchaseOrderModule],
   controllers: [AppController],
   providers: [AppService],
 })

@@ -40,6 +40,7 @@ import { Register } from "./pages/register";
 import { LocationCreate, LocationEdit, LocationList, LocationShow } from "./pages/locations";
 import { VenderCreate, VenderEdit, VenderList, VenderShow } from "./pages/venders";
 import { CompanyCreate, CompanyEdit, CompanyList, CompanyShow } from "./pages/companies";
+import { PurchaseOrderCreate, PurchaseOrderEdit, PurchaseOrderList, PurchaseOrderShow } from "./pages/purchase-orders";
 
 function App() {
   const API_URL = "http://localhost:3000";
@@ -58,7 +59,7 @@ function App() {
                 routerProvider={routerBindings}
                 authProvider={authProvider}
                 resources={[
-                  
+                  /*
                   {
                     name: "blog_posts",
                     list: "/blog-posts",
@@ -79,6 +80,7 @@ function App() {
                       canDelete: true,
                     },
                   },
+                  */
                   {
                     name: "venders",
                     list: "/venders",
@@ -105,6 +107,16 @@ function App() {
                     create: "/locations/create",
                     edit: "/locations/edit/:id",
                     show: "/locations/show/:id",
+                    meta: {
+                      canDelete: true,
+                    },
+                  },
+                  {
+                    name: "purchase-orders",
+                    list: "/purchase-orders",
+                    create: "/purchase-orders/create",
+                    edit: "/purchase-orders/edit/:id",
+                    show: "/purchase-orders/show/:id",
                     meta: {
                       canDelete: true,
                     },
@@ -166,6 +178,12 @@ function App() {
                       <Route path="create" element={<LocationCreate />} />
                       <Route path="edit/:id" element={<LocationEdit />} />
                       <Route path="show/:id" element={<LocationShow />} />
+                    </Route>
+                    <Route path="/purchase-orders">
+                      <Route index element={<PurchaseOrderList />} />
+                      <Route path="create" element={<PurchaseOrderCreate />} />
+                      <Route path="edit/:id" element={<PurchaseOrderEdit />} />
+                      <Route path="show/:id" element={<PurchaseOrderShow />} />
                     </Route>
                     <Route path="*" element={<ErrorComponent />} />
                   </Route>

@@ -47,7 +47,7 @@ model Vender {
 
 model Company {
   id      Int     @id @default(autoincrement())
-  name    String  @unique 
+  name    String  @unique
   address String?
   contact String?
   email   String?
@@ -61,9 +61,9 @@ model Company {
 }
 
 model PurchaseOrder {
-  id                  Int      @id @default(autoincrement())
-  purchaseOrderNumber String   @unique
-  date                DateTime
+  id          Int     @id @default(autoincrement())
+  orderNumber String  @unique
+  date        String?
 
   companyId Int
   company   Company @relation(fields: [companyId], references: [id])
@@ -85,10 +85,10 @@ model Asset {
   globalPrice    Float
   status         String
 
-  locationId            Int
-  location              Location      @relation(fields: [locationId], references: [id])
-  purchaseOrderNumberId Int
-  purchaseOrderNumber   PurchaseOrder @relation(fields: [purchaseOrderNumberId], references: [id])
+  locationId          Int
+  location            Location      @relation(fields: [locationId], references: [id])
+  purchaseOrderId     Int
+  purchaseOrderNumber PurchaseOrder @relation(fields: [purchaseOrderId], references: [id])
 
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt

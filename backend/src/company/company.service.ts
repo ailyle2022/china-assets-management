@@ -24,7 +24,11 @@ x
   }
 
   async findAll() {
-    return this.prisma.company.findMany();
+    return this.prisma.company.findMany({
+      include: {
+        vender: true,
+      },
+    });
   }
 
   async findOne(id: number) {
