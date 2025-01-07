@@ -39,7 +39,7 @@ export const CompanyList = () => {
             venderIsLoading ? (
               <>Loading...</>
             ) : (
-              venderData?.data?.find((item) => item.id === value?.id)?.title
+              venderData?.data?.find((item) => item.id === value?.id)?.name
             )
           }
         />

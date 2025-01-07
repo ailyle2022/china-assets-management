@@ -13,11 +13,11 @@ export const PurchaseOrderList = () => {
     syncWithLocation: true,
   });
 
-  const { data: purchaseOrderData, isLoading: purchaseOrderIsLoading } = useMany({
-      resource: "purchase-orders",
+  const { data: companyData, isLoading: companyIsLoading } = useMany({
+      resource: "companies",
       ids:
         tableProps?.dataSource
-          ?.map((item) => item?.vender?.id)
+          ?.map((item) => item?.company?.id)
           .filter(Boolean) ?? [],
       queryOptions: {
         enabled: !!tableProps?.dataSource,
@@ -34,10 +34,10 @@ export const PurchaseOrderList = () => {
           dataIndex={"company"}
           title={"Company"}
           render={(value) =>
-            purchaseOrderIsLoading ? (
+            companyIsLoading ? (
               <>Loading...</>
             ) : (
-              purchaseOrderData?.data?.find((item) => item.id === value?.id)?.title
+              companyData?.data?.find((item) => item.id === value?.id)?.name
             )
           }
         />

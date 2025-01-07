@@ -22,7 +22,11 @@ x
   }
 
   async findAll() {
-    return this.prisma.purchaseOrder.findMany();
+    return this.prisma.purchaseOrder.findMany({
+      include: {
+        company: true,
+      },
+    });
   }
 
   async findOne(id: number) {

@@ -26,9 +26,10 @@ export const PurchaseOrderShow = () => {
       <TextField value={record?.orderNumber} />
       <Title level={5}>{"Date"}</Title>
       <TextField value={record?.date} />
+      <Title level={5}>{"Company"}</Title>
       <TextField
         value={
-          companyIsLoading ? <>Loading...</> : <>{companyData?.data?.title}</>
+          companyIsLoading ? <>Loading...</> : <>{companyData?.data?.name}</>
         }
       />
     </Show>

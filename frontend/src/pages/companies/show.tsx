@@ -33,7 +33,7 @@ export const CompanyShow = () => {
       <Title level={5}>{"Vender"}</Title>
       <TextField
         value={
-          venderIsLoading ? <>Loading...</> : <>{venderData?.data?.title}</>
+          venderIsLoading ? <>Loading...</> : <>{venderData?.data?.name}</>
         }
       />
     </Show>
