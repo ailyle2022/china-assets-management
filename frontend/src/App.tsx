@@ -37,6 +37,7 @@ import {
 import { ForgotPassword } from "./pages/forgotPassword";
 import { Login } from "./pages/login";
 import { Register } from "./pages/register";
+import { LocationCreate, LocationEdit, LocationList, LocationShow } from "./pages/locations";
 
 function App() {
   const API_URL = "http://localhost:3000";
@@ -71,6 +72,16 @@ function App() {
                     create: "/categories/create",
                     edit: "/categories/edit/:id",
                     show: "/categories/show/:id",
+                    meta: {
+                      canDelete: true,
+                    },
+                  },
+                  {
+                    name: "locations",
+                    list: "/locations",
+                    create: "/locations/create",
+                    edit: "/locations/edit/:id",
+                    show: "/locations/show/:id",
                     meta: {
                       canDelete: true,
                     },
@@ -114,6 +125,12 @@ function App() {
                       <Route path="create" element={<CategoryCreate />} />
                       <Route path="edit/:id" element={<CategoryEdit />} />
                       <Route path="show/:id" element={<CategoryShow />} />
+                    </Route>
+                    <Route path="/locations">
+                      <Route index element={<LocationList />} />
+                      <Route path="create" element={<LocationCreate />} />
+                      <Route path="edit/:id" element={<LocationEdit />} />
+                      <Route path="show/:id" element={<LocationShow />} />
                     </Route>
                     <Route path="*" element={<ErrorComponent />} />
                   </Route>
