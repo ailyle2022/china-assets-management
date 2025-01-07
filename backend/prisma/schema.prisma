@@ -34,7 +34,7 @@ model Category {
 
 model Vender {
   id      Int     @id @default(autoincrement())
-  name    String  @unique
+  name    String  @unique @default("Default")
   contact String?
   email   String?
   address String?
@@ -47,7 +47,7 @@ model Vender {
 
 model Company {
   id      Int     @id @default(autoincrement())
-  name    String  @unique
+  name    String  @unique 
   address String?
   contact String?
   email   String?

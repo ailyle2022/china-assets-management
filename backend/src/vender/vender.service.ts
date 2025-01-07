@@ -23,9 +23,11 @@ export class VenderService {
   }
 
   async findOne(id: number) {
-    return this.prisma.vender.findUnique({
+    const result =  this.prisma.vender.findUnique({
       where: { id },
     });
+
+    return result;
   }
 
   async update(id: number, updateVenderDto: UpdateVenderDto) {

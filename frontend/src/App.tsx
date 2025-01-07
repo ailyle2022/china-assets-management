@@ -39,6 +39,7 @@ import { Login } from "./pages/login";
 import { Register } from "./pages/register";
 import { LocationCreate, LocationEdit, LocationList, LocationShow } from "./pages/locations";
 import { VenderCreate, VenderEdit, VenderList, VenderShow } from "./pages/venders";
+import { CompanyCreate, CompanyEdit, CompanyList, CompanyShow } from "./pages/companies";
 
 function App() {
   const API_URL = "http://localhost:3000";
@@ -57,7 +58,7 @@ function App() {
                 routerProvider={routerBindings}
                 authProvider={authProvider}
                 resources={[
-                  /*
+                  
                   {
                     name: "blog_posts",
                     list: "/blog-posts",
@@ -77,13 +78,23 @@ function App() {
                     meta: {
                       canDelete: true,
                     },
-                  },*/
+                  },
                   {
                     name: "venders",
                     list: "/venders",
                     create: "/venders/create",
                     edit: "/venders/edit/:id",
                     show: "/venders/show/:id",
+                    meta: {
+                      canDelete: true,
+                    },
+                  },
+                  {
+                    name: "companies",
+                    list: "/companies",
+                    create: "/companies/create",
+                    edit: "/companies/edit/:id",
+                    show: "/companies/show/:id",
                     meta: {
                       canDelete: true,
                     },
@@ -143,6 +154,12 @@ function App() {
                       <Route path="create" element={<VenderCreate />} />
                       <Route path="edit/:id" element={<VenderEdit />} />
                       <Route path="show/:id" element={<VenderShow />} />
+                    </Route>
+                    <Route path="/companies">
+                      <Route index element={<CompanyList />} />
+                      <Route path="create" element={<CompanyCreate />} />
+                      <Route path="edit/:id" element={<CompanyEdit />} />
+                      <Route path="show/:id" element={<CompanyShow />} />
                     </Route>
                     <Route path="/locations">
                       <Route index element={<LocationList />} />

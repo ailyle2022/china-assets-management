@@ -3,6 +3,10 @@ import { IsOptional, IsString } from "class-validator";
 export class CreateVenderDto {
     @IsString()
       name: string;
+
+      @IsString()
+      @IsOptional()
+      title?: string;
     
       @IsString()
       @IsOptional()
@@ -10,7 +14,7 @@ export class CreateVenderDto {
 
       @IsString()
       @IsOptional()
-      emaill?: string;
+      email?: string;
 
       @IsString()
       @IsOptional()
