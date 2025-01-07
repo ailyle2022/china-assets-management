@@ -28,10 +28,6 @@ export const CompanyList = () => {
     <List>
       <Table {...tableProps} rowKey="id">
         <Table.Column dataIndex="id" title={"ID"} />
-        <Table.Column dataIndex="name" title={"Name"} />
-        <Table.Column dataIndex="address" title={"Address"} />
-        <Table.Column dataIndex="contact" title={"Contact"} />
-        <Table.Column dataIndex="email" title={"Email"} />
         <Table.Column
           dataIndex={"vender"}
           title={"Vender"}
@@ -43,6 +39,11 @@ export const CompanyList = () => {
             )
           }
         />
+        <Table.Column dataIndex="name" title={"Name"} />
+        <Table.Column dataIndex="address" title={"Address"} />
+        <Table.Column dataIndex="contact" title={"Contact"} />
+        <Table.Column dataIndex="email" title={"Email"} />
+        
         <Table.Column
           title={"Actions"}
           dataIndex="actions"

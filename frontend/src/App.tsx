@@ -48,7 +48,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <GitHubBanner />
+      
       <RefineKbarProvider>
         <ColorModeContextProvider>
           <AntdApp>
@@ -210,7 +210,6 @@ function App() {
                 <UnsavedChangesNotifier />
                 <DocumentTitleHandler />
               </Refine>
-              <DevtoolsPanel />
             </DevtoolsProvider>
           </AntdApp>
         </ColorModeContextProvider>

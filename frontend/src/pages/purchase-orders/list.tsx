@@ -28,8 +28,6 @@ export const PurchaseOrderList = () => {
     <List>
       <Table {...tableProps} rowKey="id">
         <Table.Column dataIndex="id" title={"ID"} />
-        <Table.Column dataIndex="orderNumber" title={"OrderNumber"} />
-        <Table.Column dataIndex="date" title={"Date"} />
         <Table.Column
           dataIndex={"company"}
           title={"Company"}
@@ -41,6 +39,9 @@ export const PurchaseOrderList = () => {
             )
           }
         />
+        <Table.Column dataIndex="orderNumber" title={"OrderNumber"} />
+        <Table.Column dataIndex="date" title={"Date"} />
+        
         <Table.Column
           title={"Actions"}
           dataIndex="actions"
