@@ -1,5 +1,6 @@
 import { Edit, useForm, useSelect } from "@refinedev/antd";
-import { Form, Input, InputNumber, Select } from "antd";
+import { DatePicker, Form, Input, InputNumber, Select } from "antd";
+import dayjs from "dayjs";
 
 export const AssetEdit = () => {
   const { formProps, saveButtonProps } = useForm({});
@@ -15,6 +16,8 @@ export const AssetEdit = () => {
     optionLabel: "name",
     optionValue: "id"
   });
+
+  
 
   return (
     <Edit saveButtonProps={saveButtonProps}>
@@ -151,13 +154,16 @@ export const AssetEdit = () => {
         <Form.Item
           label={"WarrantyExpiry"}
           name={["warrantyExpiry"]}
+          getValueProps={(value) => ({
+            value: value ? dayjs(value) : "",
+          })}
           rules={[
             {
               required: false,
             },
           ]}
         >
-          <Input />
+          <DatePicker />
         </Form.Item>
       </Form>
 
