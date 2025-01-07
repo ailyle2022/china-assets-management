@@ -38,6 +38,7 @@ import { ForgotPassword } from "./pages/forgotPassword";
 import { Login } from "./pages/login";
 import { Register } from "./pages/register";
 import { LocationCreate, LocationEdit, LocationList, LocationShow } from "./pages/locations";
+import { VenderCreate, VenderEdit, VenderList, VenderShow } from "./pages/venders";
 
 function App() {
   const API_URL = "http://localhost:3000";
@@ -56,6 +57,7 @@ function App() {
                 routerProvider={routerBindings}
                 authProvider={authProvider}
                 resources={[
+                  /*
                   {
                     name: "blog_posts",
                     list: "/blog-posts",
@@ -75,6 +77,16 @@ function App() {
                     meta: {
                       canDelete: true,
                     },
+                  },*/
+                  {
+                    name: "venders",
+                    list: "/venders",
+                    create: "/venders/create",
+                    edit: "/venders/edit/:id",
+                    show: "/venders/show/:id",
+                    meta: {
+                      canDelete: true,
+                    },
                   },
                   {
                     name: "locations",
@@ -85,7 +97,7 @@ function App() {
                     meta: {
                       canDelete: true,
                     },
-                  },
+                  }
                 ]}
                 options={{
                   syncWithLocation: true,
@@ -125,6 +137,12 @@ function App() {
                       <Route path="create" element={<CategoryCreate />} />
                       <Route path="edit/:id" element={<CategoryEdit />} />
                       <Route path="show/:id" element={<CategoryShow />} />
+                    </Route>
+                    <Route path="/venders">
+                      <Route index element={<VenderList />} />
+                      <Route path="create" element={<VenderCreate />} />
+                      <Route path="edit/:id" element={<VenderEdit />} />
+                      <Route path="show/:id" element={<VenderShow />} />
                     </Route>
                     <Route path="/locations">
                       <Route index element={<LocationList />} />
