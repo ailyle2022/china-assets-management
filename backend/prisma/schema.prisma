@@ -79,7 +79,7 @@ model Asset {
   assetNumber    String?
   name           String
   description    String?
-  warrantyExpiry DateTime
+  warrantyExpiry String?
   localPrice     Float
   localCurrency  String
   globalPrice    Float
@@ -88,7 +88,7 @@ model Asset {
   locationId          Int
   location            Location      @relation(fields: [locationId], references: [id])
   purchaseOrderId     Int
-  purchaseOrderNumber PurchaseOrder @relation(fields: [purchaseOrderId], references: [id])
+  purchaseOrder PurchaseOrder @relation(fields: [purchaseOrderId], references: [id])
 
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt

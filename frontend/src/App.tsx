@@ -41,6 +41,7 @@ import { LocationCreate, LocationEdit, LocationList, LocationShow } from "./page
 import { VenderCreate, VenderEdit, VenderList, VenderShow } from "./pages/venders";
 import { CompanyCreate, CompanyEdit, CompanyList, CompanyShow } from "./pages/companies";
 import { PurchaseOrderCreate, PurchaseOrderEdit, PurchaseOrderList, PurchaseOrderShow } from "./pages/purchase-orders";
+import { AssetCreate, AssetEdit, AssetList, AssetShow } from "./pages/asset";
 
 function App() {
   const API_URL = "http://localhost:3000";
@@ -120,6 +121,16 @@ function App() {
                     meta: {
                       canDelete: true,
                     },
+                  },
+                  {
+                    name: "assets",
+                    list: "/assets",
+                    create: "/assets/create",
+                    edit: "/assets/edit/:id",
+                    show: "/assets/show/:id",
+                    meta: {
+                      canDelete: true,
+                    },
                   }
                 ]}
                 options={{
@@ -184,6 +195,12 @@ function App() {
                       <Route path="create" element={<PurchaseOrderCreate />} />
                       <Route path="edit/:id" element={<PurchaseOrderEdit />} />
                       <Route path="show/:id" element={<PurchaseOrderShow />} />
+                    </Route>
+                    <Route path="/assets">
+                      <Route index element={<AssetList />} />
+                      <Route path="create" element={<AssetCreate />} />
+                      <Route path="edit/:id" element={<AssetEdit />} />
+                      <Route path="show/:id" element={<AssetShow />} />
                     </Route>
                     <Route path="*" element={<ErrorComponent />} />
                   </Route>

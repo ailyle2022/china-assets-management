@@ -7,9 +7,10 @@ import { LocationModule } from './location/location.module';
 import { VenderModule } from './vender/vender.module';
 import { CompanyModule } from './company/company.module';
 import { PurchaseOrderModule } from './purchase-order/purchase-order.module';
+import { AssetModule } from './asset/asset.module';
 
 @Module({
-  imports: [BlogPostsModule, CategoriesModule, LocationModule, VenderModule, CompanyModule, PurchaseOrderModule],
+  imports: [BlogPostsModule, CategoriesModule, LocationModule, VenderModule, CompanyModule, PurchaseOrderModule, AssetModule],
   controllers: [AppController],
   providers: [AppService],
 })
