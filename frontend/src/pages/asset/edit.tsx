@@ -17,7 +17,7 @@ export const AssetEdit = () => {
     optionValue: "id"
   });
 
-  
+
 
   return (
     <Edit saveButtonProps={saveButtonProps}>
@@ -163,7 +163,7 @@ export const AssetEdit = () => {
             },
           ]}
         >
-          <DatePicker />
+          <DatePicker format="YYYY-MM-DD HH:mm:ss" />
         </Form.Item>
       </Form>
 

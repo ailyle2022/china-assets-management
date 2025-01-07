@@ -1,4 +1,5 @@
 import {
+  DateField,
   DeleteButton,
   EditButton,
   List,
@@ -68,7 +69,7 @@ export const AssetList = () => {
         <Table.Column dataIndex="serialNumber" title={"SerialNumber"} />
         <Table.Column dataIndex="assetNumber" title={"AssetNumber"} />
         <Table.Column dataIndex="description" title={"Description"} />
-        <Table.Column dataIndex="warrantyExpiry" title={"WarrantyExpiry"} />
+        <Table.Column dataIndex="warrantyExpiry" title={"WarrantyExpiry"} render={(value) => <DateField value={value} format="YYYY-MM-DD HH:mm:ss" />} />
         
         
         <Table.Column
