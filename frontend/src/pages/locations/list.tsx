@@ -1,24 +1,38 @@
 import {
   DeleteButton,
   EditButton,
+  FilterDropdown,
   List,
   ShowButton,
   useTable,
 } from "@refinedev/antd";
 import type { BaseRecord } from "@refinedev/core";
-import { Space, Table } from "antd";
+import { Input, Space, Table } from "antd";
 
 export const LocationList = () => {
   const { tableProps } = useTable({
     syncWithLocation: true,
+    filters: {},
   });
 
   return (
     <List>
       <Table {...tableProps} rowKey="id">
         <Table.Column dataIndex="id" title={"ID"} />
-        <Table.Column dataIndex="name" title={"Name"} />
-        <Table.Column dataIndex="type" title={"Type"} />
+        <Table.Column dataIndex="name" title={"Name"}
+        filterDropdown={(props) => (
+          <FilterDropdown {...props}>
+            <Input />
+          </FilterDropdown>
+        )}
+        />
+        <Table.Column dataIndex="type" title={"Type"}
+        filterDropdown={(props) => (
+          <FilterDropdown {...props}>
+            <Input />
+          </FilterDropdown>
+        )}
+         />
         <Table.Column
           title={"Actions"}
           dataIndex="actions"
