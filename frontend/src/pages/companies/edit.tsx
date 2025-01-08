@@ -37,7 +37,7 @@ export const CompanyEdit = () => {
         </Form.Item>
         <Form.Item
           label={"Contact"}
-          name={["contatct"]}
+          name={["contact"]}
           rules={[
             {
               required: false,
