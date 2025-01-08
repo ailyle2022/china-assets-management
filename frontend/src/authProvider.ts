@@ -4,8 +4,10 @@ export const TOKEN_KEY = "refine-auth";
 
 export const authProvider: AuthProvider = {
   login: async ({ username, email, password }) => {
-    if ((username || email) && password) {
-      localStorage.setItem(TOKEN_KEY, username);
+    if (email === "demo@refine.dev" && password === "demodemo") {
+      localStorage.setItem(TOKEN_KEY, email);
+      localStorage.setItem("email", email);
+
       return {
         success: true,
         redirectTo: "/",
@@ -43,10 +45,11 @@ export const authProvider: AuthProvider = {
   getPermissions: async () => null,
   getIdentity: async () => {
     const token = localStorage.getItem(TOKEN_KEY);
+    const email = localStorage.getItem("email");
     if (token) {
       return {
         id: 1,
-        name: "John Doe",
+        name: email,
         avatar: "https://i.pravatar.cc/300",
       };
     }
