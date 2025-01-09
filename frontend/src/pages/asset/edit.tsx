@@ -111,6 +111,20 @@ export const AssetEdit = () => {
           <Input />
         </Form.Item>
         <Form.Item
+          label={"PurchaseDate"}
+          name={["purchaseDate"]}
+          getValueProps={(value) => ({
+            value: value ? dayjs(value) : "",
+          })}
+          rules={[
+            {
+              required: true,
+            },
+          ]}
+        >
+          <DatePicker format="YYYY-MM-DD HH:mm:ss" />
+        </Form.Item>
+        <Form.Item
           label={"WarrantyExpiry"}
           name={["warrantyExpiry"]}
           getValueProps={(value) => ({
@@ -118,7 +132,7 @@ export const AssetEdit = () => {
           })}
           rules={[
             {
-              required: false,
+              required: true,
             },
           ]}
         >

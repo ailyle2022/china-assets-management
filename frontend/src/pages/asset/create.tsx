@@ -120,7 +120,7 @@ export const AssetCreate = () => {
           name={["assetNumber"]}
           rules={[
             {
-              required: false,
+              required: true,
             },
           ]}
         >
@@ -138,11 +138,22 @@ export const AssetCreate = () => {
           <Input />
         </Form.Item>
         <Form.Item
+          label={"PurchaseDate"}
+          name={["purchaseDate"]}
+          rules={[
+            {
+              required: false,
+            },
+          ]}
+        >
+          <DatePicker format="YYYY-MM-DD HH:mm:ss" />
+        </Form.Item>
+        <Form.Item
           label={"WarrantyExpiry"}
           name={["warrantyExpiry"]}
           rules={[
             {
-              required: false,
+              required: true,
             },
           ]}
         >

@@ -76,11 +76,12 @@ model PurchaseOrder {
 
 model Asset {
   id             Int     @id @default(autoincrement())
-  serialNumber   String?  @unique
-  assetNumber    String?  @unique
+  serialNumber   String?  
+  assetNumber    String  @unique
   name           String
   description    String?
-  warrantyExpiry String?
+  purchaseDate   DateTime
+  warrantyExpiry DateTime
   localPrice     Float
   localCurrency  String
   globalPrice    Float?

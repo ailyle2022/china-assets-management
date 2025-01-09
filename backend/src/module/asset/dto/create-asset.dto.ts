@@ -29,7 +29,11 @@ export class CreateAssetDto {
 
     @IsString()
     @IsOptional()
-    warrantyExpiry?: string;
+    purchaseDate?: number;
+
+    @IsString()
+    @IsOptional()
+    warrantyExpiry?: number;
 
     @IsString()
     @IsOptional()

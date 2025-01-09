@@ -58,8 +58,6 @@ export const AssetShow = () => {
       <TextField value={record?.localPrice} />
       <Title level={5}>{"LocalCurrency"}</Title>
       <TextField value={record?.localCurrency} />
-      <Title level={5}>{"GlobalPrice"}</Title>
-      <TextField value={record?.globalPrice} />
       
     </Show>
   );

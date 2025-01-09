@@ -10,7 +10,7 @@ export class AssetService {
   constructor() {
     this.prisma = new PrismaClient();
   }
-x
+  x
   async create(createAssetDto: CreateAssetDto) {
     return this.prisma.asset.create({
       data: {
@@ -18,12 +18,13 @@ x
         assetNumber: createAssetDto.assetNumber,
         name: createAssetDto.name,
         description: createAssetDto.description,
-        warrantyExpiry: createAssetDto.warrantyExpiry,
+        purchaseDate: new Date(createAssetDto.purchaseDate),
+        warrantyExpiry: new Date(createAssetDto.warrantyExpiry),
         localPrice: createAssetDto.localPrice,
         localCurrency: createAssetDto.localCurrency,
         globalPrice: createAssetDto.globalPrice,
         status: createAssetDto.status,
-        locationId: createAssetDto.location.id, 
+        locationId: createAssetDto.location.id,
         purchaseOrderId: createAssetDto.purchaseOrder.id,
       },
     });
@@ -56,7 +57,8 @@ x
         assetNumber: updateAssetDto.assetNumber,
         name: updateAssetDto.name,
         description: updateAssetDto.description,
-        warrantyExpiry: updateAssetDto.warrantyExpiry,
+        purchaseDate: new Date(updateAssetDto.purchaseDate),
+        warrantyExpiry: new Date(updateAssetDto.warrantyExpiry),
         localPrice: updateAssetDto.localPrice,
         localCurrency: updateAssetDto.localCurrency,
         purchaseOrderId: updateAssetDto.purchaseOrder.id,
