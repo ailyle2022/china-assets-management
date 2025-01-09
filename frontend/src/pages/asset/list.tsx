@@ -65,7 +65,6 @@ export const AssetList = () => {
         <Table.Column dataIndex="name" title={"Name"} />
         <Table.Column dataIndex="localPrice" title={"LocalPrice"} />
         <Table.Column dataIndex="localCurrency" title={"LocalCurrency"} />
-        <Table.Column dataIndex="globalPrice" title={"GlobalPrice"} />
         <Table.Column dataIndex="serialNumber" title={"SerialNumber"} />
         <Table.Column dataIndex="assetNumber" title={"AssetNumber"} />
         <Table.Column dataIndex="description" title={"Description"} />

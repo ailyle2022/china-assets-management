@@ -89,17 +89,6 @@ export const AssetEdit = () => {
           />
         </Form.Item>
         <Form.Item
-          label={"GlobalPrice"}
-          name={["globalPrice"]}
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-        >
-          <InputNumber />
-        </Form.Item>
-        <Form.Item
           label={"Status"}
           name={["status"]}
           initialValue={"idle"}

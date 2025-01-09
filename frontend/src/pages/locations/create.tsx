@@ -30,8 +30,9 @@ export const LocationCreate = () => {
           <Select
             defaultValue={"On"}
             options={[
-              { value: "On", label: "On" },
-              { value: "Third party", label: "Third party" },
+              { value: "On Office", label: "On Office" },
+              { value: "On Store", label: "On Store" },
+              { value: "Third Party", label: "Third Party" },
             ]}
             style={{ width: 200 }}
           />
