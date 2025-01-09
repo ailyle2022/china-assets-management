@@ -33,7 +33,7 @@ export const PurchaseOrderCreate = () => {
             },
           ]}
         >
-          <Input />
+          <DatePicker format="YYYY-MM-DD HH:mm:ss" />
         </Form.Item>
         <Form.Item
           label={"Company"}

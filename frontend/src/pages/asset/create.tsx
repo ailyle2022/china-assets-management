@@ -1,5 +1,5 @@
 import { Create, useForm, useSelect } from "@refinedev/antd";
-import { Form, Input, InputNumber, Select } from "antd";
+import { DatePicker, Form, Input, InputNumber, Select } from "antd";
 
 export const AssetCreate = () => {
   const { formProps, saveButtonProps } = useForm({});
@@ -146,7 +146,7 @@ export const AssetCreate = () => {
             },
           ]}
         >
-          <Input />
+          <DatePicker format="YYYY-MM-DD HH:mm:ss" />
         </Form.Item>
       </Form>
     </Create>

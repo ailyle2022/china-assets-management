@@ -1,5 +1,6 @@
 import { Edit, useForm, useSelect } from "@refinedev/antd";
 import { DatePicker, Form, Input, Select } from "antd";
+import dayjs from "dayjs";
 
 export const PurchaseOrderEdit = () => {
   const { formProps, saveButtonProps } = useForm({});
@@ -27,13 +28,16 @@ export const PurchaseOrderEdit = () => {
         <Form.Item
           label={"Date"}
           name={["date"]}
+          getValueProps={(value) => ({
+            value: value ? dayjs(value) : "",
+          })}
           rules={[
             {
               required: true,
             },
           ]}
         >
-          <Input />
+          <DatePicker format="YYYY-MM-DD HH:mm:ss" />
         </Form.Item>
         <Form.Item
           label={"Company"}

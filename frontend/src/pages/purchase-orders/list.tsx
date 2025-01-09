@@ -1,4 +1,5 @@
 import {
+  DateField,
   DeleteButton,
   EditButton,
   List,
@@ -40,7 +41,7 @@ export const PurchaseOrderList = () => {
           }
         />
         <Table.Column dataIndex="orderNumber" title={"OrderNumber"} />
-        <Table.Column dataIndex="date" title={"Date"} />
+        <Table.Column dataIndex="date" title={"Date"} render={(value) => <DateField value={value} format="YYYY-MM-DD HH:mm:ss" />} />
         
         <Table.Column
           title={"Actions"}
