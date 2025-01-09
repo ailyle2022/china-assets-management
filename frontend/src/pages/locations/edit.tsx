@@ -28,7 +28,7 @@ export const LocationEdit = () => {
           ]}
         >
           <Select
-            defaultValue={"On"}
+            defaultValue={"On Office"}
             options={[
               { value: "On Office", label: "On Office" },
               { value: "On Store", label: "On Store" },
