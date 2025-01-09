@@ -13,7 +13,7 @@ export const AssetEdit = () => {
 
   const { selectProps: purchaseOrderSelectProps } = useSelect({
     resource: "purchase-orders",
-    optionLabel: "name",
+    optionLabel: "orderNumber",
     optionValue: "id"
   });
 
@@ -32,17 +32,6 @@ export const AssetEdit = () => {
           ]}
         >
           <Input />
-        </Form.Item>
-        <Form.Item
-          label={"Location"}
-          name={["location", "id"]}
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-        >
-          <Select {...locationSelectProps} />
         </Form.Item>
         <Form.Item
           label={"PurchaseOrder"}
@@ -84,25 +73,6 @@ export const AssetEdit = () => {
               { value: "HKD", label: "HKD" },
               { value: "KRW", label: "KRW" },
               { value: "AUD", label: "AUD" },
-            ]}
-            style={{ width: 120 }}
-          />
-        </Form.Item>
-        <Form.Item
-          label={"Status"}
-          name={["status"]}
-          initialValue={"idle"}
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-        >
-          <Select
-            defaultValue={"idle"}
-            options={[
-              { value: "idle", label: "Idle" },
-              { value: "using", label: "Using" },
             ]}
             style={{ width: 120 }}
           />
