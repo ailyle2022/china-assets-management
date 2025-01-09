@@ -59,9 +59,6 @@ x
         warrantyExpiry: updateAssetDto.warrantyExpiry,
         localPrice: updateAssetDto.localPrice,
         localCurrency: updateAssetDto.localCurrency,
-        globalPrice: updateAssetDto.globalPrice,
-        status: updateAssetDto.status,
-        locationId: updateAssetDto.location.id, 
         purchaseOrderId: updateAssetDto.purchaseOrder.id,
       },
     });

@@ -88,7 +88,7 @@ export const AssetCreate = () => {
         <Form.Item
           label={"Status"}
           name={["status"]}
-          initialValue={"idle"}
+          initialValue={"Idle"}
           rules={[
             {
               required: true,
@@ -96,10 +96,10 @@ export const AssetCreate = () => {
           ]}
         >
           <Select
-            defaultValue={"idle"}
+            defaultValue={"Idle"}
             options={[
-              { value: "idle", label: "Idle" },
-              { value: "using", label: "Using" },
+              { value: "Idle", label: "Idle" },
+              { value: "In use", label: "In use" },
             ]}
             style={{ width: 120 }}
           />
