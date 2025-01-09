@@ -1,9 +1,14 @@
-import { NestFactory } from '@nestjs/core';
+import { HttpAdapterHost, NestFactory } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
+import { AllExceptionsFilter } from './filter/all-exception.filter';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
+  const httpAdapter = app.get(HttpAdapterHost);
+  //app.useGlobalFilters(new AllExceptionsFilter(httpAdapter));
+  
   app.enableCors();
 
   const config = new DocumentBuilder()

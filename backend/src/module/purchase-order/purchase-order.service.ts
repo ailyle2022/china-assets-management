@@ -1,5 +1,5 @@
-import { Injectable } from '@nestjs/common';
-import { PrismaClient } from '@prisma/client';
+import { BadRequestException, Injectable, InternalServerErrorException } from '@nestjs/common';
+import { Prisma, PrismaClient } from '@prisma/client';
 import { CreatePurchaseOrderDto } from './dto/create-purchase-order.dto';
 import { UpdatePurchaseOrderDto } from './dto/update-purchase-order.dto';
 
@@ -12,7 +12,7 @@ export class PurchaseOrderService {
   }
 x
   async create(createPurchaseOrderDto: CreatePurchaseOrderDto) {
-    return this.prisma.purchaseOrder.create({
+    return await this.prisma.purchaseOrder.create({
       data: {
         orderNumber: createPurchaseOrderDto.orderNumber,
         date: createPurchaseOrderDto.date,
